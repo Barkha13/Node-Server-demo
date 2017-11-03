@@ -14,14 +14,14 @@ var server = http.createServer(function (request, response){
             response.end(); // finished!
         });
     }
-    if(request.url === '/ninjas') {
+    else if(request.url === '/ninjas') {
         fs.readFile('ninjas.html', 'utf8', function (errors, contents){
             response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
             response.write(contents);  //  send response body
             response.end(); // finished!
         });
     }
-    if(request.url === '/ninjas/new') {
+    else if(request.url === '/ninjas/new') {
         fs.readFile('dojo.html', 'utf8', function (errors, contents){
             response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
             response.write(contents);  //  send response body
